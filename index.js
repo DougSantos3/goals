@@ -10,6 +10,10 @@ const start = async () => {
           value: "cadastrar",
         },
         {
+          name: "Listar metas",
+          value: "listar",
+        },
+        {
           name: "Sair",
           value: "sair",
         },
@@ -24,6 +28,7 @@ const start = async () => {
         console.log("Vamos listar");
         break;
       case "sair":
+        console.log("See you later!");
         return;
     }
   }
