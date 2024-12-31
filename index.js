@@ -21,24 +21,41 @@ const listarMetas = async () => {
     instructions: false,
   });
 
+  metas.forEach((meta) => {
+    meta.checked = false;
+  });
+
   if (respostas.length == 0) {
     console.log("Nenhuma meta selecionada");
     return;
   }
 
-  metas.forEach((meta) => {
-    meta.checked = false;
-  });
-
   respostas.forEach((resposta) => {
     const meta = metas.find((meta) => {
-      return (meta.value = resposta);
+      return (meta.value == resposta);
     });
     meta.checked = true;
   });
 
   console.log("Meta(s) marcadas como concluída(s)");
 };
+
+const metasRealizadas = async () => {
+  const realizadas = metas.filter((meta) => {
+    return meta.checked
+  })
+
+  if(realizadas.length == 0) {
+    console.log('Não existem metas realizadas')
+    return
+  }
+
+  await select({
+    messages: 'Metas Realizadas',
+    choices: [...realizadas]
+  })
+
+}
 
 const start = async () => {
   while (true) {
@@ -52,6 +69,10 @@ const start = async () => {
         {
           name: "Listar metas",
           value: "listar",
+        },
+        {
+          name: "Metas realizadas",
+          value: "realizadas",
         },
         {
           name: "Sair",
@@ -69,6 +90,9 @@ const start = async () => {
         await listarMetas();
         console.log("Vamos listar");
         break;
+      case 'realizadas':
+        await metasRealizadas()
+        break
       case "sair":
         console.log("See you later!");
         return;
