@@ -22,7 +22,3 @@ npm run lint
 
 # Formata o código usando Prettier.
 npm run format 
-
-
-### Saída Terminal
-![Log do Terminal](images/image.png)
