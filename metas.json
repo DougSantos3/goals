@@ -1,6 +1,10 @@
 [
-    {
-        "value": "Learn English",
-        "checked": false
-    }
+  {
+    "value": "english",
+    "checked": true
+  },
+  {
+    "value": "a",
+    "checked": true
+  }
 ]
