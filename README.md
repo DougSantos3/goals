@@ -1,7 +1,9 @@
 ### Version Node
+
 `v22.11.0`
 
 ## Getting Started
+
 First, run the development server:
 
 ```bash
@@ -18,7 +20,13 @@ bun dev
 ```bash
 
 # Executa o ESLint em todo o projeto.
-npm run lint 
+pnpm run lint
 
 # Formata o código usando Prettier.
-npm run format 
+pnpm run format
+
+
+
+# Executa o projeto
+node index.js
+```
